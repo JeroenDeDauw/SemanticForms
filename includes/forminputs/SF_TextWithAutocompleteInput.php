@@ -56,6 +56,9 @@ class SFTextWithAutocompleteInput extends SFTextInput {
 		} elseif ( array_key_exists( 'values from concept', $field_args ) ) {
 			$autocompleteFieldType = 'concept';
 			$autocompletionSource = $field_args['values from concept'];
+		} elseif ( array_key_exists( 'values from subpage', $field_args ) ) {
+			$autocompleteFieldType = 'subpage';
+			$autocompletionSource = $field_args['values from subpage'];
 		} elseif ( array_key_exists( 'values from namespace', $field_args ) ) {
 			$autocompleteFieldType = 'namespace';
 			$autocompletionSource = $field_args['values from namespace'];

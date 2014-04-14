@@ -58,6 +58,7 @@
     "sf_forminputs_valuesfromcategory": "A category whose pages should be this input's set of values",
     "sf_forminputs_valuesfromnamespace": "A namespace whose pages should be this input's set of values",
     "sf_forminputs_valuesfromconcept": "A Semantic MediaWiki \"concept\" page whose pages should be this input's set of values",
+    "sf_forminputs_valuesfromsubpage": "A MediaWiki \"subpage(s)\" of a page which would act as this input's set of values",
     "sf_forminputs_valuesfromurl": "A URL holding structured data that should be this input's set of values",
     "sf_forminputs_values": "The set of values for this input, separated by commas",
     "sf_forminputs_list": "Mark this input as holding a list of values",
