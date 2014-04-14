@@ -46,6 +46,11 @@ abstract class SFEnumInput extends SFFormInput {
 			'type' => 'string',
 			'description' => wfMessage( 'sf_forminputs_valuesfromconcept' )->text()
 		);
+		$params[] = array(
+			'name' => 'values from subpage',
+			'type' => 'string',
+			'description' => wfMessage( 'sf_forminputs_valuesfromsubpage' )->text()
+		);
 		return $params;
 	}
 

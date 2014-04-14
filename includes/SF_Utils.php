@@ -1115,6 +1115,40 @@ END;
 	}
 
 	/**
+	 * @param $title \Title
+	 * @return array
+	 */
+	public static function getAllPagesFromSubpage($title){
+		if ( is_null( $title ) ) {
+			return array();
+		}
+
+		$subPages = $title->getSubpages();
+		if(empty($subPages)){
+			return array();
+		}
+		/** @var Title[] $titles */
+		$titles[ ] = $title;
+		while ( $subPages->valid() ) {
+			$titles[ ] = $subPages->current();
+			$subPages->next();
+		}
+
+		$result = array();
+		foreach ( $titles as $title ) {
+			$titleText = $title->getFullText();
+			$titleTextParts = explode( '/', $titleText );
+			$titleText = '';
+			foreach ( $titleTextParts as $part ) {
+				$titleText .= $part;
+				$result[ $titleText ] = null;
+				$titleText .= '/';
+			}
+		}
+		return array_keys($result);
+	}
+
+	/**
 	 * Returns a formatted (pseudo) random number
 	 *
 	 * @param number $numDigits the min width of the random number

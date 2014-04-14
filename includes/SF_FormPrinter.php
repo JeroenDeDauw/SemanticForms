@@ -976,6 +976,10 @@ END;
 								$is_restricted = !array_intersect(
 									$wgUser->getEffectiveGroups(), array_map( 'trim', explode( ',', $sub_components[1] ) )
 								);
+							}else if ($sub_components[0] == 'values from subpage'){
+								$title = $wgParser->recursiveTagParse( $sub_components[1] );
+								$title = Title::newFromText($title);
+								$possible_values = SFUtils::getAllPagesFromSubpage($title);
 							}
 							if ( !is_null( $possible_values ) && array_key_exists( 'mapping template', $field_args ) ) {
 								$possible_values = SFUtils::getLabels( $possible_values, $field_args['mapping template'] );
